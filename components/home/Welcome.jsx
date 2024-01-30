@@ -1,4 +1,10 @@
-import { View, Text, TouchableOpacity, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TextInput,
+  Pressable,
+} from "react-native";
 import React from "react";
 import styles from "../../styles/Home/welcome.style";
 import { COLORS, SIZES } from "../../constants";
@@ -23,7 +29,7 @@ const Welcome = () => {
           <Feather name="search" size={24} style={styles.searchIcon} />
         </TouchableOpacity>
         <View style={styles.searchWrapper}>
-          <TextInput
+          <Pressable
             style={styles.searchInput}
             value=""
             onPressIn={() => {

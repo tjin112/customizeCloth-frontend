@@ -8,8 +8,12 @@ import {
   Fontisto,
 } from "@expo/vector-icons";
 import { COLORS, SIZES } from "../constants";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
-const ProductDetails = ({ navigation }) => {
+const ProductDetails = () => {
+  const route = useRoute();
+  const navigation = useNavigation();
+  const { item } = route.params;
   const [count, setCount] = useState(1);
 
   const increment = () => {
@@ -22,7 +26,11 @@ const ProductDetails = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.upperRow}>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.goBack();
+          }}
+        >
           <Ionicons name="chevron-back-circle" size={30} />
         </TouchableOpacity>
 
@@ -33,7 +41,7 @@ const ProductDetails = ({ navigation }) => {
 
       <Image
         source={{
-          uri: "https://d326fntlu7tb1e.cloudfront.net/uploads/cb2e64a8-ad4c-4d45-b58b-b0c7e11b6bb4-fn1.jpg",
+          uri: item.imageUrl,
         }}
         style={styles.image}
       />
@@ -41,9 +49,9 @@ const ProductDetails = ({ navigation }) => {
       <ScrollView style={styles.details}>
         {/* title */}
         <View style={styles.titleRow}>
-          <Text style={styles.title}>Product</Text>
+          <Text style={styles.title}>{item.title}</Text>
           <View style={styles.priceWrapper}>
-            <Text style={styles.price}>$66.66</Text>
+            <Text style={styles.price}>${item.price}</Text>
           </View>
         </View>
         {/* rating */}
@@ -68,24 +76,7 @@ const ProductDetails = ({ navigation }) => {
         {/*  */}
         <View style={styles.descriptionWraper}>
           <Text style={styles.description}>Description</Text>
-          <Text style={styles.descriptionText}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis
-            ullamcorper velit sed ullamcorper morbi tincidunt ornare massa.
-            Nullam eget felis eget nunc lobortis mattis aliquam faucibus. Sed
-            felis eget velit aliquet sagittis id. Risus at ultrices mi tempus
-            imperdiet nulla malesuada pellentesque. Metus aliquam eleifend mi in
-            nulla posuere sollicitudin aliquam ultrices. Id interdum velit
-            laoreet id. Fames ac turpis egestas sed tempus. Et sollicitudin ac
-            orci phasellus. Et malesuada fames ac turpis egestas maecenas
-            pharetra. Elementum integer enim neque volutpat ac tincidunt vitae
-            semper quis. Gravida cum sociis natoque penatibus et magnis dis
-            parturient. In nibh mauris cursus mattis molestie a iaculis at.
-            Elementum facilisis leo vel fringilla est ullamcorper. Sit amet
-            commodo nulla facilisi nullam. Interdum consectetur libero id
-            faucibus nisl tincidunt eget nullam non. Justo eget magna fermentum
-            iaculis eu non. Sed cras ornare arcu dui vivamus arcu felis.
-          </Text>
+          <Text style={styles.descriptionText}>{item.description}</Text>
         </View>
         <View style={{ marginBottom: SIZES.small }}>
           <View style={styles.location}>
