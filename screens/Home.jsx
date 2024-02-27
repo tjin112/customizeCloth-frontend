@@ -8,6 +8,7 @@ import Carousel from "../components/home/Carousel";
 import Heading from "../components/home/Heading";
 import ProductRow from "../components/products/ProductRow";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import HomeCategory from "../components/home/HomeCategory";
 const Home = () => {
   const [userData, setUserData] = useState(null);
   const [userLogin, setUserLogin] = useState(false);
@@ -17,7 +18,6 @@ const Home = () => {
   const checkExistingUser = async () => {
     const id = await AsyncStorage.getItem("id");
     const userId = `user${JSON.parse(id)}`;
-    console.log("userId", userId);
     try {
       const currentUser = await AsyncStorage.getItem(userId);
       if (currentUser !== null) {
@@ -53,6 +53,7 @@ const Home = () => {
         <Carousel />
         <Heading />
         <ProductRow />
+        <HomeCategory />
       </ScrollView>
     </SafeAreaView>
   );

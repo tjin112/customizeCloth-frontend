@@ -8,10 +8,9 @@ const styles = StyleSheet.create({
     alignContent: "center",
   },
   container: {
-    flex: 1,
-    alignItems: "center",
-    paddingTop: SIZES.xxLarge,
-    paddingLeft: SIZES.small / 2,
+    // justifyContent: "flex-end",
+    // paddingTop: SIZES.small / 2,
+    // paddingHorizontal: SIZES.small / 2,
   },
   separator: {
     height: 16,

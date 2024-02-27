@@ -110,9 +110,20 @@ const Profile = () => {
           )}
 
           {userLogin === false ? (
-            <></>
+            <View></View>
           ) : (
             <View style={styles.menuWrapper}>
+              {/* ORDER */}
+              <TouchableOpacity onPress={() => navigation.navigate("Orders")}>
+                <View style={styles.menuItem(0.2)}>
+                  <MaterialCommunityIcons
+                    name="truck-delivery-outline"
+                    size={24}
+                    color={COLORS.primary}
+                  />
+                  <Text style={styles.menuText}>Order</Text>
+                </View>
+              </TouchableOpacity>
               {/* Favorites */}
               <TouchableOpacity
                 onPress={() => navigation.navigate("Favourites")}
@@ -124,18 +135,6 @@ const Profile = () => {
                     color={COLORS.primary}
                   />
                   <Text style={styles.menuText}>Favorites</Text>
-                </View>
-              </TouchableOpacity>
-
-              {/* ORDER */}
-              <TouchableOpacity onPress={() => navigation.navigate("Orders")}>
-                <View style={styles.menuItem(0.2)}>
-                  <MaterialCommunityIcons
-                    name="truck-delivery-outline"
-                    size={24}
-                    color={COLORS.primary}
-                  />
-                  <Text style={styles.menuText}>Order</Text>
                 </View>
               </TouchableOpacity>
 

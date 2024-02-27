@@ -4,15 +4,15 @@ const styles = StyleSheet.create({
   container: {
     width: 182,
     height: 240,
-    marginEnd: 22,
+    // marginEnd: 22,
     borderRadius: SIZES.medium,
     backgroundColor: COLORS.secondary,
   },
   imageContainer: {
     flex: 1,
-    width: 170,
-    marginLeft: SIZES.small / 2,
-    marginTop: SIZES.small / 2,
+    width: 182,
+    // marginLeft: SIZES.small / 2,
+    // marginTop: SIZES.small / 2,
     borderRadius: SIZES.small,
     overflow: "hidden",
     // backgroundColor: COLORS.gray,
@@ -26,17 +26,19 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "bold",
-    fontSize: SIZES.large,
+    fontSize: SIZES.medium,
     marginBottom: 2,
+    color:COLORS.black
   },
   supplier: {
     fontFamily: "regular",
-    fontSize: SIZES.small,
+    fontSize: SIZES.xSmall,
     color: COLORS.gray,
   },
   price: {
     fontFamily: "bold",
     fontSize: SIZES.medium,
+    color:COLORS.black
   },
   addBtn: {
     position: "absolute",

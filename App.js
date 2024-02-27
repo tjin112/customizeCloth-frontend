@@ -6,14 +6,20 @@ import { useCallback } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import BottomTabNavigation from "./navigation/BottomTabNavigation";
+import "react-native-gesture-handler";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+
 import {
+  CameraPage,
   Cart,
+  CategoryPage,
   Favourites,
   LoginPage,
   NewRival,
   Orders,
   ProductDetails,
   Signup,
+  TakePhotoPage,
 } from "./screens";
 
 const Stack = createNativeStackNavigator();
@@ -41,50 +47,67 @@ export default function App() {
 
   return (
     // <Text style={{ marginTop: 20, fontFamily: "semiBold" }}>123</Text>
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Bottom Navigation"
-          component={BottomTabNavigation}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Cart"
-          component={Cart}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="ProductDetails"
-          component={ProductDetails}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="ProductList"
-          component={NewRival}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Login"
-          component={LoginPage}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Orders"
-          component={Orders}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Favourites"
-          component={Favourites}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Signup"
-          component={Signup}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Bottom Navigation"
+            component={BottomTabNavigation}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Cart"
+            component={Cart}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ProductDetails"
+            component={ProductDetails}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ProductList"
+            component={NewRival}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Login"
+            component={LoginPage}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Orders"
+            component={Orders}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Favourites"
+            component={Favourites}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Signup"
+            component={Signup}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CategoryPage"
+            component={CategoryPage}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CameraPage"
+            component={CameraPage}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="TakePhotoPage"
+            component={TakePhotoPage}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }
 

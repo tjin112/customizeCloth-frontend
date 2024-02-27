@@ -6,8 +6,11 @@ import ProductDetails from "./ProductDetails";
 import NewRival from "./NewRival";
 import LoginPage from "./LoginPage";
 import Orders from "./Orders";
-import Favourites from "./LoginPage";
+import Favourites from "./Favourites";
 import Signup from "./Signup";
+import CategoryPage from "./CategoryPage";
+import CameraPage from "./CameraPage";
+import TakePhotoPage from "./TakePhotoPage";
 export {
   Home,
   Search,
@@ -19,4 +22,7 @@ export {
   Orders,
   Favourites,
   Signup,
+  CategoryPage,
+  CameraPage,
+  TakePhotoPage,
 };
